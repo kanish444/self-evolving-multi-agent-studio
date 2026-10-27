@@ -1,0 +1,161 @@
+@import "tailwindcss";
+
+:root {
+  --app-bg: #0D141B;
+  --sidebar-bg: #0B131A;
+  --surface: #121D26;
+  --surface-raised: #182630;
+  --border: #263744;
+  --text-primary: #EDF3F8;
+  --text-secondary: #A8B8C8;
+  --text-muted: #788B9B;
+  --accent: #15BDEB;
+  --accent-soft: rgba(21, 189, 235, 0.12);
+  --button-primary: #0878F9;
+  --logo-green: #2BC879;
+}
+
+@theme {
+  /* SE-MAESTRO Graphite Dark Theme Palette */
+  --color-background: #0D141B;
+  --color-app-bg: #0D141B;
+  --color-sidebar-bg: #0B131A;
+  --color-surface: #121D26;
+  --color-surface-secondary: #182630;
+  --color-surface-elevated: #182630;
+  --color-surface-hover: #162430;
+  --color-surface-active: #1D2D3B;
+
+  --color-border: #263744;
+  --color-border-subtle: #1C2B36;
+  --color-border-accent: rgba(21, 189, 235, 0.35);
+
+  --color-text-primary: #EDF3F8;
+  --color-text-secondary: #A8B8C8;
+  --color-text-muted: #788B9B;
+
+  /* Cyan Active Accent */
+  --color-accent: #15BDEB;
+  --color-accent-hover: #0EA5E9;
+  --color-accent-soft: rgba(21, 189, 235, 0.12);
+  --color-accent-border: rgba(21, 189, 235, 0.3);
+
+  /* Primary Blue Button */
+  --color-button-primary: #0878F9;
+  --color-button-primary-hover: #076AD9;
+
+  /* Brand Green Leaf */
+  --color-logo-green: #2BC879;
+
+  /* Status Semantics */
+  --color-success: #2BC879;
+  --color-success-hover: #22A362;
+  --color-success-soft: rgba(43, 200, 121, 0.12);
+  --color-success-border: rgba(43, 200, 121, 0.3);
+
+  --color-warning: #F59E0B;
+  --color-warning-hover: #D97706;
+  --color-warning-soft: rgba(245, 158, 11, 0.12);
+  --color-warning-border: rgba(245, 158, 11, 0.3);
+
+  --color-error: #EF4444;
+  --color-error-hover: #DC2626;
+  --color-error-soft: rgba(239, 68, 68, 0.12);
+  --color-error-border: rgba(239, 68, 68, 0.3);
+
+  --color-info: #15BDEB;
+  --color-info-soft: rgba(21, 189, 235, 0.12);
+
+  /* Typography: Space Grotesk (Brand & Headings), Manrope (Nav, Body & UI), JetBrains Mono (Code & Terminal) */
+  --font-sans: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-display: "Space Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+/* Custom Scrollbars */
+@utility custom-scrollbar {
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #1F2937;
+    border-radius: 4px;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background: #334155;
+  }
+}
+
+/* Typography Helpers */
+@utility font-display {
+  font-family: var(--font-display);
+}
+
+@utility font-mono-code {
+  font-family: var(--font-mono);
+}
+
+@utility technical-label {
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-family: var(--font-mono);
+}
+
+/* Restrained Shadows & Elevation */
+@utility shadow-command-card {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3), 0 0 0 1px var(--color-border);
+}
+
+@utility shadow-command-hover {
+  box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(37, 99, 235, 0.3);
+}
+
+@utility shadow-command-modal {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.5), 0 0 0 1px #1F2937;
+}
+
+/* Card Interaction */
+@utility card-interactive {
+  transition: transform 120ms ease, box-shadow 120ms ease, border-color 120ms ease;
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(37, 99, 235, 0.35);
+  }
+}
+
+/* Base resets & typography */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+input, textarea, select, button {
+  font-family: inherit;
+}
+
+::selection {
+  background-color: rgba(37, 99, 235, 0.35);
+  color: #FFFFFF;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
